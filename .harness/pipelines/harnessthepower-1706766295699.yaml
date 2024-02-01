@@ -1,8 +1,8 @@
 pipeline:
-  identifier: Build_shoom818_harnessthepower_1706755871569
+  identifier: Build_shoom818_harnessthepower_1706766313256
   name: Build harnessthepower
   orgIdentifier: default
-  projectIdentifier: default_project
+  projectIdentifier: lab
   properties:
     ci:
       codebase:
@@ -40,18 +40,20 @@ pipeline:
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
               - step:
-                  type: BuildAndPushDockerRegistry
-                  name: BuildAndPushDockerRegistry_1
-                  identifier: BuildAndPushDockerRegistry_1
+                  identifier: dockerbuild
+                  name: docker_build
                   spec:
-                    connectorRef: DockerforHarness
-                    repo: shoom818/harnessdocker
-                    tags:
-                      - <+pipeline.sequenceId>
+                    image: plugins/docker
+                    settings:
+                      dry_run: "true"
+                      repo: hello/world
+                      tags: latest
+                  timeout: ""
+                  type: Plugin
           platform:
+            arch: Amd64
             os: Linux
-            arch: Arm64
           runtime:
-            type: Cloud
             spec: {}
+            type: Cloud
         type: CI

@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_shoom818_harnessthepower_1706755871569-pr-trigger-input-set
+  identifier: Build_shoom818_harnessthepower_1706755871569prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_shoom818_harnessthepower_1706755871569
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>

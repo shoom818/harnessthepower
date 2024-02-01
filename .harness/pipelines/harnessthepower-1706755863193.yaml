@@ -44,7 +44,7 @@ pipeline:
                   name: Build and Push to Docker
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
-                    connectorRef: account.DockerRepo
+                    connectorRef: DockerHarness
                     repo: shoom818/harnessdocker
                     tags:
                       - <+pipeline.sequenceId>

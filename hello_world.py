@@ -1,6 +1,7 @@
 print("Hello, World!")
 print('Hello again')
-print('its not working')
+print('its working')
+print('deploy setup')
 
 def add(a, b):
     return a+b

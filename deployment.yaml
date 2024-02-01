@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world-python-deployment
+  name: python-deployment
 spec:
   replicas: 1
   selector:
@@ -15,14 +15,14 @@ spec:
       containers:
       - name: hello-world-python-container
         # image: shoom818/harnessdocker:31
-        image: <+artifact.image>
+        # image: <+artifact.image>
         ports:
         - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-world-python-service
+  name: python-service
 spec:
   type: NodePort # Change to LoadBalancer if you're on a cloud platform and want an external IP
   selector:

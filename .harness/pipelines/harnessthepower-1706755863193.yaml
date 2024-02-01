@@ -39,6 +39,15 @@ pipeline:
                       pytest tests.py
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: DockerforHarness
+                    repo: shoom818/harnessdocker
+                    tags:
+                      - <+pipeline.sequenceId>
           platform:
             os: Linux
             arch: Arm64

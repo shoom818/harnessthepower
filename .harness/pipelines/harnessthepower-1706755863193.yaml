@@ -36,7 +36,7 @@ pipeline:
                     shell: Sh
                     command: |-
                       pip install pytest
-                      pytest tests.py --junit-xml=report.xml
+                      pytest tests.py
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
           platform:

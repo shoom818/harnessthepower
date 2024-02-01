@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: hello-world-python-container
-        image: shoom818/harnessdocker:25
+        image: shoom818/harnessdocker:31
         ports:
         - containerPort: 80

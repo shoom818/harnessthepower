@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_shoom818_harnessthepower_1706755871569-push-trigger-input-set
+  identifier: Build_shoom818_harnessthepower_1706755871569pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_shoom818_harnessthepower_1706755871569
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>

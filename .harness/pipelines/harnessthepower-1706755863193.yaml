@@ -19,6 +19,17 @@ pipeline:
             steps:
               - step:
                   type: Run
+                  identifier: dependencies
+                  name: Dependencies
+                  spec:
+                    shell: Sh
+                    command: |-
+                      python -m pip install --upgrade pip
+                      pip install -r requirements.txt
+                    envVariables:
+                      PIP_CACHE_DIR: /root/.cache
+              - step:
+                  type: Run
                   name: Test
                   identifier: test
                   spec:

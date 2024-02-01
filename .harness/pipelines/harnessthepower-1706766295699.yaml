@@ -18,6 +18,28 @@ pipeline:
           execution:
             steps:
               - step:
+                  type: Run
+                  identifier: dependencies
+                  name: Install Dependencies
+                  spec:
+                    shell: Sh
+                    command: |-
+                      python -m pip install --upgrade pip
+                      pip install -r requirements.txt
+                    envVariables:
+                      PIP_CACHE_DIR: /root/.cache
+              - step:
+                  type: Run
+                  name: Run pytest
+                  identifier: test
+                  spec:
+                    shell: Sh
+                    command: |-
+                      pip install pytest
+                      pytest tests.py
+                    envVariables:
+                      PIP_CACHE_DIR: /root/.cache
+              - step:
                   identifier: dockerbuild
                   name: docker_build
                   spec:

@@ -20,7 +20,7 @@ pipeline:
               - step:
                   type: Run
                   identifier: dependencies
-                  name: Dependencies
+                  name: Install Dependencies
                   spec:
                     shell: Sh
                     command: |-
@@ -30,7 +30,7 @@ pipeline:
                       PIP_CACHE_DIR: /root/.cache
               - step:
                   type: Run
-                  name: Test
+                  name: Run pytest
                   identifier: test
                   spec:
                     shell: Sh

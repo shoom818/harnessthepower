@@ -18,6 +18,9 @@ spec:
         # image: <+artifact.image>
         ports:
         - containerPort: 80
+        env:
+        - name: VERSION
+          value: {{.Values.image}}
 ---
 apiVersion: v1
 kind: Service

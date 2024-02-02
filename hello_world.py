@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     multi_line_string = f"""Hello World.
-    This is actually templatized, now?
+    This is actually templatized, now? removed install
     {multiply(5, 4)} 
     {os.environ.get("VERSION")}"""
 

@@ -14,7 +14,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return f'Hello, World this is the last demo!!!!! \n {multiply(5, 4)} {os.environ.get("VERSION")}' 
+    multi_line_string = f"""Hello World.
+    This is templatized
+    {multiply(5, 4)} 
+    {os.environ.get("VERSION")}"""
+    
+    return multi_line_string 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: hello-world-python-container
-        # image: shoom818/harnessdocker:31
+        image: shoom818/harnessdocker:31
         # image: <+artifact.image>
         ports:
         - containerPort: 80
@@ -30,4 +30,4 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30001
+      # nodePort: 30003

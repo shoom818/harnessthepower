@@ -15,10 +15,10 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     multi_line_string = f"""Hello World.
-    This is templatized
+    This is actually templatized
     {multiply(5, 4)} 
     {os.environ.get("VERSION")}"""
-    
+
     return multi_line_string 
 
 if __name__ == '__main__':

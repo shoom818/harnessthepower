@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     multi_line_string = f"""Hello World.<br>
-    This is a templatized pipeline.<br>
+    This is a templatized pipeline. Here is an update<br>
     {multiply(5, 4)} <br>
     {os.environ.get("VERSION")}"""
 
